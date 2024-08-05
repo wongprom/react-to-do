@@ -3,5 +3,5 @@ export interface ITodo {
   id: string;
   isCompleted: boolean;
   todo: string;
-  createdAt: string;
+  createdAt: number | null;
 }
