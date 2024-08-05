@@ -1,6 +1,4 @@
-import { ITodoData } from './interfaces';
-
-export const todosData: ITodoData[] = [
+export const todosData = [
   {
     author: 'Jimmy',
     id: '1',

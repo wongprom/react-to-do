@@ -1,4 +1,4 @@
-export interface ITodoData {
+export interface ITodo {
   author: string;
   id: string;
   isCompleted: boolean;
