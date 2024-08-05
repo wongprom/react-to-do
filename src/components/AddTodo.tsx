@@ -2,7 +2,11 @@ import { ChangeEventHandler, MouseEventHandler, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ITodo } from '../interfaces';
 
-export const AddTodo = () => {
+interface IAddTodoProps {
+  addTodo: (todo: ITodo) => void;
+}
+
+export const AddTodo = ({ addTodo }: IAddTodoProps) => {
   const [formData, setFormData] = useState<ITodo>({
     author: '',
     id: '',
@@ -12,18 +16,16 @@ export const AddTodo = () => {
   });
   const uuid = uuidv4();
   var newDate = new Date();
-  console.log(typeof newDate.valueOf());
 
   const handelSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
     // todo Validate input before add to all todos
     const newTodo = { ...formData, id: uuid, createdAt: newDate.valueOf() };
-    console.log('🚀 ~ AddTodo ~ newTodo:', newTodo);
+    addTodo(newTodo);
   };
 
   const handleInputOnChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const { name, value } = e.target;
-
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,

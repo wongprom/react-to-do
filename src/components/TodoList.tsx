@@ -1,13 +1,15 @@
 import { Todo } from '.';
-import { todosData } from '../data';
+import { ITodo } from '../interfaces';
 
-export const TodoList = () => {
-  console.log('🚀 ~ todosData:', todosData);
+interface ITodosProps {
+  todos: ITodo[] | [];
+}
 
+export const TodoList = ({ todos }: ITodosProps) => {
   return (
     <div>
-      <h2>ITodosData</h2>
-      {todosData.map((todo) => (
+      <h2>Todos</h2>
+      {todos?.map((todo) => (
         <Todo key={todo.id} todo={todo} />
       ))}
     </div>
