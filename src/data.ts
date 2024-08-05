@@ -21,3 +21,11 @@ export const todosData = [
     createdAt: 9234234456567569,
   },
 ];
+
+export const initialFormData = {
+  author: '',
+  id: '',
+  isCompleted: false,
+  todo: '',
+  createdAt: null,
+};
