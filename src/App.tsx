@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AddTodoPage, TodoListPage } from './components';
+import { AddTodoPage, Header, TodoListPage } from './components';
 import { ITodo } from './interfaces';
 
 export function App() {
@@ -9,13 +9,16 @@ export function App() {
     setTodos([...todos, newTodo]);
   };
   return (
-    <main>
-      <section>
-        <AddTodoPage addTodo={addTodo} />
-      </section>
-      <section>
-        <TodoListPage todos={todos} />
-      </section>
-    </main>
+    <>
+      <Header />
+      <main>
+        <section>
+          <AddTodoPage addTodo={addTodo} />
+        </section>
+        <section>
+          <TodoListPage todos={todos} />
+        </section>
+      </main>
+    </>
   );
 }
