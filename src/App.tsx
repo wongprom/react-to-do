@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AddTodo, TodoList } from './components';
+import { AddTodoPage, TodoListPage } from './components';
 import { ITodo } from './interfaces';
 
 export function App() {
@@ -11,10 +11,10 @@ export function App() {
   return (
     <main>
       <section>
-        <AddTodo addTodo={addTodo} />
+        <AddTodoPage addTodo={addTodo} />
       </section>
       <section>
-        <TodoList todos={todos} />
+        <TodoListPage todos={todos} />
       </section>
     </main>
   );

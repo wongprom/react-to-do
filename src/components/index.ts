@@ -1,3 +1,3 @@
-export * from '../components/AddTodo';
-export * from '../components/TodoList';
+export * from '../pages/AddTodoPage';
+export * from '../pages/TodoListPage';
 export * from '../components/Todo';

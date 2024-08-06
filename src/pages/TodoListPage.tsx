@@ -1,11 +1,11 @@
 import { ITodo } from '../interfaces';
-import { Todo } from '.';
+import { Todo } from '../components';
 
 interface ITodosProps {
   todos: ITodo[] | [];
 }
 
-export const TodoList = ({ todos }: ITodosProps) => {
+export const TodoListPage = ({ todos }: ITodosProps) => {
   return (
     <div>
       <h2>Todos</h2>

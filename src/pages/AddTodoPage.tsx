@@ -8,7 +8,7 @@ interface IAddTodoProps {
   addTodo: (todo: ITodo) => void;
 }
 
-export const AddTodo = ({ addTodo }: IAddTodoProps) => {
+export const AddTodoPage = ({ addTodo }: IAddTodoProps) => {
   const [formData, setFormData] = useState<ITodo>(initialFormData);
 
   const handelSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
