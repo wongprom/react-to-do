@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { AddTodoPage, Header, TodoListPage } from './components';
-import { ITodo } from './interfaces';
+import { Header } from './components';
+import { ITodo, ITodoContext } from './interfaces';
+import { Outlet } from 'react-router-dom';
 
 export function App() {
   const [todos, setTodos] = useState<ITodo[] | []>([]);
@@ -8,16 +9,24 @@ export function App() {
   const addTodo = (newTodo: ITodo) => {
     setTodos([...todos, newTodo]);
   };
+
+  const todoContext: ITodoContext = {
+    todos,
+    addTodo,
+  };
+  console.log('🚀 ~ App ~ todoContext:', todoContext);
+
   return (
     <>
       <Header />
       <main>
-        <section>
+        <Outlet context={todoContext} />
+        {/* <section>
           <AddTodoPage addTodo={addTodo} />
-        </section>
-        <section>
+          </section>
+          <section>
           <TodoListPage todos={todos} />
-        </section>
+        </section> */}
       </main>
     </>
   );

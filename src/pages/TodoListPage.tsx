@@ -1,11 +1,10 @@
-import { ITodo } from '../interfaces';
+import { useOutletContext } from 'react-router-dom';
+
+import { ITodoContext } from '../interfaces';
 import { Todo } from '../components';
 
-interface ITodosProps {
-  todos: ITodo[] | [];
-}
-
-export const TodoListPage = ({ todos }: ITodosProps) => {
+export const TodoListPage = () => {
+  const { todos } = useOutletContext<ITodoContext>();
   return (
     <div>
       <h2>Todos</h2>

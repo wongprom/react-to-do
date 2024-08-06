@@ -1,15 +1,14 @@
 import { ChangeEventHandler, MouseEventHandler, useState } from 'react';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 
 import { initialFormData } from '../data';
 import { isFormInputsValid, newDate, uuid } from '../utils';
-import { ITodo } from '../interfaces';
+import { ITodo, ITodoContext } from '../interfaces';
 
-interface IAddTodoProps {
-  addTodo: (todo: ITodo) => void;
-}
-
-export const AddTodoPage = ({ addTodo }: IAddTodoProps) => {
+export const AddTodoPage = () => {
   const [formData, setFormData] = useState<ITodo>(initialFormData);
+  const { addTodo } = useOutletContext<ITodoContext>();
+  const navigate = useNavigate();
 
   const handelSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
@@ -17,6 +16,7 @@ export const AddTodoPage = ({ addTodo }: IAddTodoProps) => {
     if (isFormInputsValid(formData)) {
       addTodo(newTodo);
       setFormData(initialFormData);
+      navigate('/');
     }
   };
 

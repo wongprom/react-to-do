@@ -5,3 +5,8 @@ export interface ITodo {
   todo: string;
   createdAt: number | null;
 }
+
+export interface ITodoContext {
+  todos: ITodo[];
+  addTodo: (todo: ITodo) => void;
+}
