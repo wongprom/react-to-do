@@ -10,10 +10,12 @@ export function App() {
   };
   return (
     <main>
-      <section>{/* Add 1 todo */}</section>
-      <AddTodo addTodo={addTodo} />
-      <section>{/* Display all Todos */}</section>
-      <TodoList todos={todos} />
+      <section>
+        <AddTodo addTodo={addTodo} />
+      </section>
+      <section>
+        <TodoList todos={todos} />
+      </section>
     </main>
   );
 }

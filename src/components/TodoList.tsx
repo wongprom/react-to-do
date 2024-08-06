@@ -1,5 +1,5 @@
-import { Todo } from '.';
 import { ITodo } from '../interfaces';
+import { Todo } from '.';
 
 interface ITodosProps {
   todos: ITodo[] | [];

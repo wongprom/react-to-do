@@ -1,7 +1,8 @@
 import { ChangeEventHandler, MouseEventHandler, useState } from 'react';
-import { ITodo } from '../interfaces';
-import { isFormInputsValid, newDate, uuid } from '../utils';
+
 import { initialFormData } from '../data';
+import { isFormInputsValid, newDate, uuid } from '../utils';
+import { ITodo } from '../interfaces';
 
 interface IAddTodoProps {
   addTodo: (todo: ITodo) => void;
