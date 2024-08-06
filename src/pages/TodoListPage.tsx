@@ -1,10 +1,11 @@
-import { Todo } from '../components';
+import { Modal, Todo } from '../components';
 import { useTodoContext } from '../customHooks';
 
 export const TodoListPage = () => {
-  const { todos } = useTodoContext();
+  const { todos, showModal } = useTodoContext();
   return (
     <div>
+      {showModal && <Modal />}
       <h2>Todos</h2>
       <ul>
         {todos?.map((todo) => (

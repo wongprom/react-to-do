@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 export function App() {
   const [todos, setTodos] = useState<ITodo[] | []>([]);
-
+  const [showModal, setShowModal] = useState<boolean>(false);
   const addTodo = (newTodo: ITodo) => {
     setTodos([...todos, newTodo]);
   };
@@ -26,11 +26,17 @@ export function App() {
     setTodos(tempTodos);
   };
 
+  const handleEditTodoById = (id: string) => {
+    console.log('🚀 ~ handleEditTodo ~ id:', id);
+  };
+
   const todoContext: ITodoContext = {
     todos,
+    showModal,
     addTodo,
     deleteTodoById,
     toggleCompleteTodoById,
+    handleEditTodoById,
   };
 
   return (
