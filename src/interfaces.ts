@@ -9,4 +9,5 @@ export interface ITodo {
 export interface ITodoContext {
   todos: ITodo[];
   addTodo: (todo: ITodo) => void;
+  deleteTodoById: (id: string) => void;
 }

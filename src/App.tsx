@@ -10,11 +10,16 @@ export function App() {
     setTodos([...todos, newTodo]);
   };
 
+  const deleteTodoById = (id: string) => {
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(filteredTodos);
+  };
+
   const todoContext: ITodoContext = {
     todos,
     addTodo,
+    deleteTodoById,
   };
-  console.log('🚀 ~ App ~ todoContext:', todoContext);
 
   return (
     <>

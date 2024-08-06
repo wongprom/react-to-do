@@ -1,9 +1,11 @@
+import { useTodoContext } from '../customHooks';
 import { ITodo } from '../interfaces';
 
 interface ITodoProps {
   todo: ITodo;
 }
 export const Todo = ({ todo }: ITodoProps) => {
+  const { deleteTodoById } = useTodoContext();
   return (
     <li className="todo">
       <p>id: {todo.id}</p>
@@ -14,7 +16,7 @@ export const Todo = ({ todo }: ITodoProps) => {
       <div>
         <button>Done</button>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => deleteTodoById(todo.id)}>Delete</button>
       </div>
     </li>
   );
