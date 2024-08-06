@@ -10,4 +10,5 @@ export interface ITodoContext {
   todos: ITodo[];
   addTodo: (todo: ITodo) => void;
   deleteTodoById: (id: string) => void;
+  toggleCompleteTodoById: (id: string) => void;
 }

@@ -1,3 +1,6 @@
-.todo {
+.todo-card {
   border: 1px solid #606e93;
+}
+.text-line-through {
+  text-decoration: line-through;
 }

@@ -15,10 +15,22 @@ export function App() {
     setTodos(filteredTodos);
   };
 
+  const toggleCompleteTodoById = (id: string) => {
+    const tempTodos = todos.map((todo) => {
+      let tempTodo = { ...todo };
+      if (tempTodo.id === id) {
+        tempTodo.isCompleted = !tempTodo.isCompleted;
+      }
+      return tempTodo;
+    });
+    setTodos(tempTodos);
+  };
+
   const todoContext: ITodoContext = {
     todos,
     addTodo,
     deleteTodoById,
+    toggleCompleteTodoById,
   };
 
   return (
