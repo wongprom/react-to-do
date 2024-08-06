@@ -1,12 +1,11 @@
-import { useTodoContext } from '../customHooks';
+import { useTodosLength } from '../customHooks';
 
 export const AboutPage = () => {
-  const { todos } = useTodoContext();
-  const todosLength = todos.length;
+  const todoLength = useTodosLength();
   return (
     <>
       <div>
-        <strong>Family's todos left: {todosLength}</strong>
+        <strong>Family's todos left: {todoLength}</strong>
         <h1>The Importance of Having a To-Do List in a Family</h1>
         <p>
           In the hustle and bustle of modern family life, keeping track of
