@@ -29,3 +29,18 @@ export const initialFormData = {
   todo: '',
   createdAt: null,
 };
+
+export const navLinks = [
+  {
+    to:"add-todo",
+    text:"Add new Todo"
+  },
+  {
+    to:"/",
+    text:"Todo List"
+  },
+  {
+    to:"/about",
+    text:"About"
+  },
+]

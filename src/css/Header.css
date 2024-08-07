@@ -2,23 +2,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background-color: black;
-  color: whitesmoke;
+  color:#f0f4b2;
+  background-color: #000200;
   padding: 1rem 2rem;
-  width: 100%;
-
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header .links {
+  color: #dfe2d0;
   display: flex;
   gap: 2rem;
 }
 
-.header .links .link {
-  color: whitesmoke;
-  font-size: 1.5rem;
+a.link{
+  color: #dfe2d0;
   text-decoration: none;
+
 }
+
+.links .link.active, a.link:hover{
+  color: #74e8c7;
+}
+
