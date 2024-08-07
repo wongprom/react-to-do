@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="header-wrapper">
-        <h1 className="logo">The Movie List</h1>
+        <h1 className="logo">Family's ToDo List</h1>
         <div className="links">
           {navLinks.map((link) => (
             <NavLink
