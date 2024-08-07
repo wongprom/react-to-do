@@ -1,6 +1,59 @@
-.todo-card {
-  border: 1px solid #606e93;
-}
+/* jsx styling */
 .text-line-through {
   text-decoration: line-through;
+}
+
+.todo-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #606e93;
+  color: whitesmoke;
+}
+
+.todo-card .rektangle {
+  height: 80px;
+  background-color: blue;
+}
+
+.todo-card .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-inline: 1rem;
+  z-index: 0;
+}
+
+.todo-card .content-wrapper .created {
+  font-size: small;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.todo-card .content-wrapper p {
+  margin: 0;
+}
+.todo-card .content-wrapper .avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -4rem;
+  border: 2px solid white;
+  border-radius: 70px;
+}
+.todo-card .buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-block: 1rem;
+}
+.content-wrapper .buttons-wrapper .button-wrapper button {
+}
+
+/* icons */
+.material-symbols-outlined {
+  font-size: 40px;
 }

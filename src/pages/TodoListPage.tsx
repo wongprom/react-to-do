@@ -1,13 +1,14 @@
-import { Modal, Todo } from '../components';
-import { useTodoContext } from '../customHooks';
+import { Modal, Todo } from "../components";
+import { useTodoContext } from "../customHooks";
 
 export const TodoListPage = () => {
   const { todos, showModal } = useTodoContext();
   return (
-    <div>
+    <div className="todo-list-page">
       {showModal && <Modal />}
-      <h2>Todos</h2>
+      <h1>Todos</h1>
       <ul>
+        {/* sort todos by timeStamp, newest first */}
         {todos?.map((todo) => (
           <Todo key={todo.id} todo={todo} />
         ))}
