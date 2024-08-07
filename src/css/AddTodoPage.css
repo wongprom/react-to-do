@@ -15,6 +15,7 @@
   background-color: hotpink;
   border-radius: 20px;
   padding-block: 2rem;
+  max-width: 500px;
 }
 .add-todo-page .form .input-wrapper {
   display: flex;
