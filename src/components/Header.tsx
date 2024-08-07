@@ -9,6 +9,7 @@ export const Header = () => {
         <div className="links">
           {navLinks.map((link) => (
             <NavLink
+              key={link.text}
               to={link.to}
               className={({ isActive }) => (isActive ? "link active" : "link")}
             >
