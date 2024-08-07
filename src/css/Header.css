@@ -1,8 +1,13 @@
+.border-radius-20 {
+  border-radius: 20px;
+}
+
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  color:#f0f4b2;
+  color: #f0f4b2;
   background-color: #000200;
   padding: 1rem 2rem;
   position: fixed;
@@ -12,18 +17,18 @@
 }
 
 .header .links {
-  color: #dfe2d0;
   display: flex;
+  justify-content: center;
+  color: #dfe2d0;
   gap: 2rem;
 }
 
-a.link{
+a.link {
   color: #dfe2d0;
   text-decoration: none;
-
 }
 
-.links .link.active, a.link:hover{
+.links .link.active,
+a.link:hover {
   color: #74e8c7;
 }
-

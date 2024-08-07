@@ -1,0 +1,47 @@
+.add-todo-page h1 {
+  color: #cdbaf2;
+}
+.add-todo-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-todo-page .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: hotpink;
+  border-radius: 20px;
+  padding-block: 2rem;
+}
+.add-todo-page .form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 1rem;
+}
+
+.add-todo-page .form .input-wrapper input {
+  padding: 1rem 1.3rem;
+}
+
+.add-todo-page .form .button-wrapper {
+  padding-inline: 1rem;
+}
+
+.add-todo-page .form .button-wrapper button {
+  background-color: #12255b;
+  border: none;
+  border: 4px solid #12255b;
+  border-radius: 5px;
+  padding-block: 0.4rem;
+  color: whitesmoke;
+  width: 50%;
+}
+
+.add-todo-page .form .button-wrapper button:hover {
+  border: 4px solid #12255b;
+  background-color: whitesmoke;
+  color: #12255b;
+}

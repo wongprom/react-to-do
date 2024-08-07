@@ -1,6 +1,16 @@
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  padding-inline: 2rem;
+  background-color: #282421;
+  height: 100vh;
+}
+
 main {
   padding-top: 8rem;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
