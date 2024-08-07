@@ -8,9 +8,12 @@ export interface ITodo {
 
 export interface ITodoContext {
   todos: ITodo[];
+  editTodo:ITodo | null
   showModal: boolean;
   addTodo: (todo: ITodo) => void;
   deleteTodoById: (id: string) => void;
   toggleCompleteTodoById: (id: string) => void;
-  handleEditTodoById: (id: string) => void;
+  handleFindTodoToEditById: (id: string) => void;
+  handleCloseModal: () => void
+  handleEditTodo: (id:string, updatedTodoText:string) => void
 }

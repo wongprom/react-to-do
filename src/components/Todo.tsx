@@ -3,12 +3,12 @@ import { ITodo } from '../interfaces';
 
 interface ITodoProps {
   todo: ITodo;
-  edit?: false | true;
 }
 export const Todo = ({ todo }: ITodoProps) => {
-  const { deleteTodoById, toggleCompleteTodoById, handleEditTodoById } =
+  const { deleteTodoById, toggleCompleteTodoById, handleFindTodoToEditById } =
     useTodoContext();
   return (
+
     <li className="todo-card">
       <p>id: {todo.id}</p>
       <p>author: {todo.author}</p>
@@ -22,7 +22,7 @@ export const Todo = ({ todo }: ITodoProps) => {
         <button onClick={() => toggleCompleteTodoById(todo.id)}>
           complete
         </button>
-        <button onClick={() => handleEditTodoById(todo.id)}>Edit</button>
+        <button onClick={() => handleFindTodoToEditById(todo.id)}>Edit</button>
         <button onClick={() => deleteTodoById(todo.id)}>Delete</button>
       </div>
     </li>
