@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { useTodoContext } from '../customHooks';
 import { initialFormData } from '../data';
-import { isFormInputsValid, newDate } from '../utils';
+import { isFormInputsValid } from '../utils';
 import { ITodo } from '../interfaces';
 
 export const AddTodoPage = () => {
@@ -14,7 +14,7 @@ export const AddTodoPage = () => {
 
   const handelSubmit: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
-    const newTodo = { ...formData, id: uuidv4(), createdAt: newDate.valueOf() };
+    const newTodo = { ...formData, id: uuidv4(), createdAt: Date.now() };
     if (isFormInputsValid(formData)) {
       addTodo(newTodo);
       setFormData(initialFormData);
@@ -49,7 +49,7 @@ export const AddTodoPage = () => {
           value={formData.todo}
           onChange={handleInputOnChange}
         />
-        <button onClick={handelSubmit}>Add Todo</button>
+        <button onClick={(e)=>handelSubmit(e)}>Add Todo</button>
       </form>
     </>
   );
