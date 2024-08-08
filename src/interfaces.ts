@@ -7,13 +7,14 @@ export interface ITodo {
 }
 
 export interface ITodoContext {
+  handleSortOnChange: (sortType: string) => void;
   todos: ITodo[];
-  editTodo:ITodo | null
+  editTodo: ITodo | null;
   showModal: boolean;
   addTodo: (todo: ITodo) => void;
   deleteTodoById: (id: string) => void;
   toggleCompleteTodoById: (id: string) => void;
   handleFindTodoToEditById: (id: string) => void;
-  handleCloseModal: () => void
-  handleEditTodo: (id:string, updatedTodoText:string) => void
+  handleCloseModal: () => void;
+  handleEditTodo: (id: string, updatedTodoText: string) => void;
 }

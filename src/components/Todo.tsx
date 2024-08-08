@@ -32,7 +32,7 @@ export const Todo = ({ todo }: ITodoProps) => {
     backgroundColor: getRandomColorFromPallete(),
   };
 
-  const displayFullTime = `${workingDate.getHours()}:${workingDate.getMinutes()}`;
+  const displayFullTime = `${workingDate.getHours()}:${workingDate.getMinutes()}:${workingDate.getSeconds()}`;
 
   return (
     <li className="todo-card">
