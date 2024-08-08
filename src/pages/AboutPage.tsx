@@ -3,9 +3,11 @@ import { useTodosLength } from '../customHooks';
 export const AboutPage = () => {
   const todoLength = useTodosLength();
   return (
-    <>
-      <div>
-        <strong>Family's todos left: {todoLength}</strong>
+    <div className='about-page'>
+      <div className='intro'>
+        <p>
+          <strong>Family's todos left: {todoLength}</strong>
+        </p>
         <h1>The Importance of Having a To-Do List in a Family</h1>
         <p>
           In the hustle and bustle of modern family life, keeping track of
@@ -18,7 +20,7 @@ export const AboutPage = () => {
           is crucial for any family:
         </p>
       </div>
-      <div>
+      <section className='section reasons'>
         <ol>
           <li>
             <h2>Organization and Clarity</h2>
@@ -93,6 +95,8 @@ export const AboutPage = () => {
             </p>
           </li>
         </ol>
+      </section>
+      <div className='outro'>
         <p>
           In conclusion, a family to-do list is more than just a simple
           organizational tool; it is a vital component of a well-functioning
@@ -103,6 +107,6 @@ export const AboutPage = () => {
           ensuring that nothing important slips through the cracks.
         </p>
       </div>
-    </>
+    </div>
   );
 };

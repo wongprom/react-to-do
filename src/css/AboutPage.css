@@ -1,0 +1,30 @@
+h1 {
+  color: #cdbaf2;
+}
+h2,
+li::marker {
+  color: #dfe2d0;
+}
+p {
+  color: #afedc8;
+}
+ol {
+  padding-left: 0;
+}
+strong {
+  color: whitesmoke;
+}
+
+.about-page {
+  max-width: 1200px;
+}
+
+.about-page .section.reasons ol {
+  color: #afedc8;
+}
+
+@media only screen and (min-width: 640px) {
+  .about-page {
+    padding-inline: 2rem;
+  }
+}

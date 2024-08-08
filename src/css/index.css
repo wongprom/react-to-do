@@ -1,6 +1,7 @@
+@import url("./AboutPage.css");
 @import url("./AddTodoPage.css");
 @import url("./App.css");
 @import url("./Header.css");
+@import url("./Modal.css");
 @import url("./Todo.css");
 @import url("./TodoListaPage.css");
-@import url("./Modal.css");
