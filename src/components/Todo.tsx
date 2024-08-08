@@ -66,7 +66,7 @@ export const Todo = ({ todo }: ITodoProps) => {
           </span>
         </p>
       </div>
-      <div className="buttons-wrapper">
+      <div className="buttons-wrapper-left">
         <div className="button-wrapper">
           <button onClick={() => toggleCompleteTodoById(todo.id)}>
             <span className="material-symbols-outlined">check</span>
@@ -81,6 +81,22 @@ export const Todo = ({ todo }: ITodoProps) => {
           <button onClick={() => deleteTodoById(todo.id)}>
             <span className="material-symbols-outlined">close</span>
           </button>
+        </div>
+        <div className="buttons-wrapper-right arrow-buttons">
+          <div className="button-wrapper">
+            <button>
+              <span className="material-symbols-outlined">
+                keyboard_arrow_up
+              </span>
+            </button>
+          </div>
+          <div className="button-wrapper">
+            <button>
+              <span className="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </li>
