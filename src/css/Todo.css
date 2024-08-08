@@ -3,16 +3,28 @@
   text-decoration: line-through;
 }
 
+/* icons */
+.material-symbols-outlined {
+  font-size: 40px;
+}
+
 .todo-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #606e93;
+  border-radius: 16px;
   color: whitesmoke;
+  /* From Glassmorphism https://css.glass */
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.6px);
+  -webkit-backdrop-filter: blur(5.6px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
 }
 
 .todo-card .rektangle {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   height: 80px;
-  background-color: blue;
 }
 
 .todo-card .content-wrapper {
@@ -36,6 +48,7 @@
 .todo-card .content-wrapper p {
   margin: 0;
 }
+
 .todo-card .content-wrapper .avatar-wrapper {
   display: flex;
   flex-direction: column;
@@ -44,16 +57,10 @@
   border: 2px solid white;
   border-radius: 70px;
 }
+
 .todo-card .buttons-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-around;
   padding-block: 1rem;
-}
-.content-wrapper .buttons-wrapper .button-wrapper button {
-}
-
-/* icons */
-.material-symbols-outlined {
-  font-size: 40px;
 }
