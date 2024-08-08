@@ -1,22 +1,23 @@
-import { useState } from "react";
-import { Header } from "./components";
-import { ITodo, ITodoContext } from "./interfaces";
-import { Outlet } from "react-router-dom";
+import { useState } from 'react';
+import { Header } from './components';
+import { ITodo, ITodoContext } from './interfaces';
+import { Outlet } from 'react-router-dom';
+import { initTodos } from './data';
 
 export function App() {
-  const [todos, setTodos] = useState<ITodo[] | []>([]);
+  const [todos, setTodos] = useState<ITodo[] | []>(initTodos);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editTodo, setEditTodo] = useState<ITodo | null>(null);
 
-  const sortTodos = (type: "createdAt" | "author") => {
+  const sortTodos = (type: 'createdAt' | 'author') => {
     const tempTodos = [...todos];
-    if (type === "author") {
+    if (type === 'author') {
       tempTodos.sort((a, b) => {
         if (a.author.toLowerCase() < b.author.toLowerCase()) return -1;
         if (a.author.toLowerCase() > b.author.toLowerCase()) return 1;
         return 0;
       });
-    } else if (type === "createdAt") {
+    } else if (type === 'createdAt') {
       tempTodos.sort((a, b) => {
         return b.createdAt! - a.createdAt!;
       });
@@ -25,10 +26,10 @@ export function App() {
   };
 
   const handleSortOnChange = (sortType: string) => {
-    if (sortType === "createdAt" || sortType === "author") {
+    if (sortType === 'createdAt' || sortType === 'author') {
       sortTodos(sortType);
     } else {
-      console.log("handleSortOnChange error");
+      console.log('handleSortOnChange error');
     }
   };
 
@@ -58,7 +59,7 @@ export function App() {
       setEditTodo(found);
       setShowModal(true);
     } else {
-      console.log("found is undefined");
+      console.log('found is undefined');
     }
   };
 

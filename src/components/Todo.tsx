@@ -1,8 +1,8 @@
-import Avatar, { genConfig } from "react-nice-avatar";
-import { useTodoContext, useTodosLength } from "../customHooks";
-import { DAYS_OF_WEEK, MONTH_OF_YEAR } from "../data";
-import { ITodo } from "../interfaces";
-import { getRandomColorFromPallete } from "../utils";
+import Avatar, { genConfig } from 'react-nice-avatar';
+import { useTodoContext, useTodosLength } from '../customHooks';
+import { DAYS_OF_WEEK, MONTH_OF_YEAR } from '../data';
+import { ITodo } from '../interfaces';
+import { getRandomColorFromPallete } from '../utils';
 
 interface ITodoProps {
   todo: ITodo;
@@ -42,23 +42,23 @@ export const Todo = ({ todo, index }: ITodoProps) => {
   const displayFullTime = `${workingDate.getHours()}:${workingDate.getMinutes()}:${workingDate.getSeconds()}`;
 
   return (
-    <li className="todo-card">
+    <li className='todo-card'>
       <div className={`rektangle`} style={inlineStyle}></div>
-      <div className="content-wrapper">
-        <div className="avatar-wrapper">
+      <div className='content-wrapper'>
+        <div className='avatar-wrapper'>
           {/* // ! ? How to prevent Avatar to change when state changes => todos,randomColor, onClick={() => handleFindTodoToEditById(todo.id)  */}
-          <Avatar style={{ width: "8rem", height: "8rem" }} {...config} />
+          <Avatar style={{ width: '8rem', height: '8rem' }} {...config} />
         </div>
         <p>
           <span>
             <strong>{todo.author} </strong>
           </span>
-          `s todo is{" "}
+          `s todo is{' '}
         </p>
-        <p className={`${todo.isCompleted && "text-line-through"}`}>
+        <p className={`${todo.isCompleted && 'text-line-through'}`}>
           <strong>{todo.todo}</strong>
         </p>
-        <p className="created">
+        <p className='created'>
           <span>
             <strong>{displayFullTime}</strong>
           </span>
@@ -73,36 +73,36 @@ export const Todo = ({ todo, index }: ITodoProps) => {
           </span>
         </p>
       </div>
-      <div className="buttons-wrapper-left">
-        <div className="button-wrapper">
+      <div className='buttons-wrapper-left'>
+        <div className='button-wrapper'>
           <button onClick={() => toggleCompleteTodoById(todo.id)}>
-            <span className="material-symbols-outlined">check</span>
+            <span className='material-symbols-outlined'>check</span>
           </button>
         </div>
-        <div className="button-wrapper">
+        <div className='button-wrapper'>
           <button onClick={() => handleFindTodoToEditById(todo.id)}>
-            <span className="material-symbols-outlined">edit</span>
+            <span className='material-symbols-outlined'>edit</span>
           </button>
         </div>
-        <div className="button-wrapper">
+        <div className='button-wrapper'>
           <button onClick={() => deleteTodoById(todo.id)}>
-            <span className="material-symbols-outlined">close</span>
+            <span className='material-symbols-outlined'>close</span>
           </button>
         </div>
-        <div className="buttons-wrapper-right arrow-buttons">
-          <div className="button-wrapper">
+        <div className='buttons-wrapper-right arrow-buttons'>
+          <div className='button-wrapper'>
             <button onClick={() => moveTodoUp(index)} disabled={index === 0}>
-              <span className="material-symbols-outlined">
+              <span className='material-symbols-outlined'>
                 keyboard_arrow_up
               </span>
             </button>
           </div>
-          <div className="button-wrapper">
+          <div className='button-wrapper'>
             <button
               onClick={() => moveTodoDown(index)}
               disabled={index === todosLength - 1}
             >
-              <span className="material-symbols-outlined">
+              <span className='material-symbols-outlined'>
                 keyboard_arrow_down
               </span>
             </button>
