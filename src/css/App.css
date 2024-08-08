@@ -3,18 +3,20 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
+  flex-direction: column;
+  align-items: center;
   padding-inline: 2rem;
   background-color: #282421;
   height: 100vh;
-  max-width: 650px;
-  margin: 0 auto;
 }
 
 main {
   padding-top: 8rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (min-width: 640px) {

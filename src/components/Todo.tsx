@@ -2,7 +2,7 @@ import Avatar, { genConfig } from "react-nice-avatar";
 import { useTodoContext } from "../customHooks";
 import { DAYS_OF_WEEK, MONTH_OF_YEAR } from "../data";
 import { ITodo } from "../interfaces";
-import { randomColorFromPallete } from "../utils";
+import { getRandomColorFromPallete } from "../utils";
 
 interface ITodoProps {
   todo: ITodo;
@@ -29,7 +29,7 @@ export const Todo = ({ todo }: ITodoProps) => {
   const day = DAYS_OF_WEEK[workingDate.getDay()];
 
   const inlineStyle = {
-    backgroundColor: randomColorFromPallete,
+    backgroundColor: getRandomColorFromPallete(),
   };
 
   const displayFullTime = `${workingDate.getHours()}:${workingDate.getMinutes()}`;

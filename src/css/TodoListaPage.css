@@ -1,11 +1,20 @@
+.todo-list-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .todo-list-page h1 {
   color: #cdbaf2;
 }
 
 ul {
+  width: 100%;
   padding: 0;
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }

@@ -5,5 +5,6 @@ export const isFormInputsValid = (formData: ITodo) => {
   return formData.author !== "" && formData.todo !== "";
 };
 
-export const randomColorFromPallete =
-  COLORS[Math.floor(Math.random() * COLORS.length)];
+export const getRandomColorFromPallete = () => {
+  return COLORS[Math.floor(Math.random() * COLORS.length)];
+};
