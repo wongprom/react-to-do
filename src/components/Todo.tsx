@@ -1,6 +1,8 @@
 import Avatar, { genConfig } from "react-nice-avatar";
 import { useTodoContext } from "../customHooks";
+import { DAYS_OF_WEEK, MONTH_OF_YEAR } from "../data";
 import { ITodo } from "../interfaces";
+import { randomColorFromPallete } from "../utils";
 
 interface ITodoProps {
   todo: ITodo;
@@ -17,60 +19,19 @@ export const Todo = ({ todo }: ITodoProps) => {
   }
   const { deleteTodoById, toggleCompleteTodoById, handleFindTodoToEditById } =
     useTodoContext();
+  // Avatar
   const config = genConfig();
-  const MONTH = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const DAYS_OF_WEEK = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+
   const convertCreatedAtToNumber = Number(todo.createdAt);
   const workingDate = new Date(convertCreatedAtToNumber);
-
   const year = workingDate.getFullYear().toString();
-  const month = MONTH[workingDate.getMonth()];
+  const month = MONTH_OF_YEAR[workingDate.getMonth()];
   const day = DAYS_OF_WEEK[workingDate.getDay()];
-  const COLORS = [
-    "#440a1c",
-    "#282421",
-    "#f0f4b2",
-    "#757540",
-    "#606e93",
-    "#000200",
-    "#74e8c7",
-    "#afedc8",
-    "#623a75",
-    "#dfe2d0",
-    "#251a44",
-    "#cdbaf2",
-    "#12255b",
-    "#11685a",
-    "#090a06",
-  ];
-  const randomColor = COLORS[Math.floor(Math.random() * COLORS.length)];
 
   const inlineStyle = {
-    backgroundColor: randomColor,
+    backgroundColor: randomColorFromPallete,
   };
 
-  const displayFullDate = `${year}/${month}/${day}`;
   const displayFullTime = `${workingDate.getHours()}:${workingDate.getMinutes()}`;
 
   return (
@@ -78,6 +39,7 @@ export const Todo = ({ todo }: ITodoProps) => {
       <div className={`rektangle`} style={inlineStyle}></div>
       <div className="content-wrapper">
         <div className="avatar-wrapper">
+          {/* // ! ? How to prevent Avatar to change when state changes => todos,randomColor, onClick={() => handleFindTodoToEditById(todo.id)  */}
           <Avatar style={{ width: "8rem", height: "8rem" }} {...config} />
         </div>
         <p>
