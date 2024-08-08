@@ -19,8 +19,8 @@ export const TodoListPage = () => {
         <option value="author">Author</option>
       </select>
       <ul>
-        {todos.map((todo) => (
-          <Todo key={todo.id} todo={todo} />
+        {todos.map((todo, index) => (
+          <Todo key={todo.id} todo={todo} index={index} />
         ))}
       </ul>
     </div>

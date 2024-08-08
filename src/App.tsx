@@ -78,6 +78,26 @@ export function App() {
     setShowModal(false);
   };
 
+  const moveTodoUp = (index: number) => {
+    if (index > 0) {
+      const tempTodos = [...todos];
+      const tempTodo = tempTodos[index];
+      tempTodos[index] = tempTodos[index - 1];
+      tempTodos[index - 1] = tempTodo;
+      setTodos(tempTodos);
+    }
+  };
+
+  const moveTodoDown = (index: number) => {
+    if (index < todos.length - 1) {
+      const tempTodos = [...todos];
+      const tempTodo = tempTodos[index];
+      tempTodos[index] = tempTodos[index + 1];
+      tempTodos[index + 1] = tempTodo;
+      setTodos(tempTodos);
+    }
+  };
+
   const todoContext: ITodoContext = {
     handleSortOnChange,
     todos,
@@ -89,6 +109,8 @@ export function App() {
     handleFindTodoToEditById,
     handleCloseModal,
     handleEditTodo,
+    moveTodoUp,
+    moveTodoDown,
   };
 
   return (

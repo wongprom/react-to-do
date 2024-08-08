@@ -1,13 +1,14 @@
 import Avatar, { genConfig } from "react-nice-avatar";
-import { useTodoContext } from "../customHooks";
+import { useTodoContext, useTodosLength } from "../customHooks";
 import { DAYS_OF_WEEK, MONTH_OF_YEAR } from "../data";
 import { ITodo } from "../interfaces";
 import { getRandomColorFromPallete } from "../utils";
 
 interface ITodoProps {
   todo: ITodo;
+  index: number;
 }
-export const Todo = ({ todo }: ITodoProps) => {
+export const Todo = ({ todo, index }: ITodoProps) => {
   {
     /* <p>id: {todo.id}</p> */
   }
@@ -17,8 +18,14 @@ export const Todo = ({ todo }: ITodoProps) => {
   {
     /* <p>isCompleted: {todo.isCompleted === true ? "true" : "false"}</p> */
   }
-  const { deleteTodoById, toggleCompleteTodoById, handleFindTodoToEditById } =
-    useTodoContext();
+  const {
+    deleteTodoById,
+    toggleCompleteTodoById,
+    handleFindTodoToEditById,
+    moveTodoUp,
+    moveTodoDown,
+  } = useTodoContext();
+  const todosLength = useTodosLength();
   // Avatar
   const config = genConfig();
 
@@ -84,14 +91,17 @@ export const Todo = ({ todo }: ITodoProps) => {
         </div>
         <div className="buttons-wrapper-right arrow-buttons">
           <div className="button-wrapper">
-            <button>
+            <button onClick={() => moveTodoUp(index)} disabled={index === 0}>
               <span className="material-symbols-outlined">
                 keyboard_arrow_up
               </span>
             </button>
           </div>
           <div className="button-wrapper">
-            <button>
+            <button
+              onClick={() => moveTodoDown(index)}
+              disabled={index === todosLength - 1}
+            >
               <span className="material-symbols-outlined">
                 keyboard_arrow_down
               </span>

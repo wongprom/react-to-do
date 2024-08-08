@@ -17,4 +17,6 @@ export interface ITodoContext {
   handleFindTodoToEditById: (id: string) => void;
   handleCloseModal: () => void;
   handleEditTodo: (id: string, updatedTodoText: string) => void;
+  moveTodoDown: (index: number) => void;
+  moveTodoUp: (index: number) => void;
 }
