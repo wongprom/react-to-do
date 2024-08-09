@@ -87,3 +87,18 @@ p span strong {
   justify-content: space-around;
   width: 100%;
 }
+.button-wrapper button {
+  background-color: #74e8c7;
+  color: #090a06;
+}
+.button-wrapper button:hover {
+  background-color: #afedc8;
+  color: whitesmoke;
+}
+/* .button-wrapper button span:hover  {
+  background-color: blueviolet;
+  } */
+.button-wrapper button:disabled {
+  cursor: no-drop;
+  background-color: #440a1c;
+}
