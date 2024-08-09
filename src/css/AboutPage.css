@@ -11,12 +11,13 @@ p {
 ol {
   padding-left: 0;
 }
-strong {
-  color: whitesmoke;
-}
 
 .about-page {
   max-width: 1200px;
+}
+
+.about-page .intro p strong {
+  color: whitesmoke;
 }
 
 .about-page .section.reasons ol {
