@@ -119,12 +119,6 @@ export function App() {
       <Header />
       <main>
         <Outlet context={todoContext} />
-        {/* <section>
-					<AddTodoPage addTodo={addTodo} />
-					</section>
-					<section>
-					<TodoListPage todos={todos} />
-				</section> */}
       </main>
     </>
   );
