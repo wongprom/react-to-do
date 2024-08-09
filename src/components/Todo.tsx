@@ -10,9 +10,6 @@ interface ITodoProps {
 }
 export const Todo = ({ todo, index }: ITodoProps) => {
   {
-    /* <p>id: {todo.id}</p> */
-  }
-  {
     /* <p>Display time it took to complete...?</p> */
   }
   {
