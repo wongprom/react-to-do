@@ -88,17 +88,16 @@ p span strong {
   width: 100%;
 }
 .button-wrapper button {
-  background-color: #74e8c7;
+  background-color: #dfe2d0;
   color: #090a06;
 }
 .button-wrapper button:hover {
-  background-color: #afedc8;
+  background-color: #11685a;
   color: whitesmoke;
 }
-/* .button-wrapper button span:hover  {
-  background-color: blueviolet;
-  } */
+
 .button-wrapper button:disabled {
   cursor: no-drop;
   background-color: #440a1c;
+  color: transparent;
 }
