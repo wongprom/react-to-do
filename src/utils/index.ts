@@ -1,8 +1,8 @@
-import { COLORS } from "../data";
-import { ITodo } from "../interfaces";
+import { COLORS } from '../data';
+import { ITodo } from '../interfaces';
 
 export const isFormInputsValid = (formData: ITodo) => {
-  return formData.author !== "" && formData.todo !== "";
+  return formData.author !== '' && formData.todo !== '';
 };
 
 export const getRandomColorFromPallete = () => {

@@ -9,10 +9,10 @@ import { AboutPage } from './pages';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path='/' element={<App />}>
       <Route index element={<TodoListPage />} />
-      <Route path="add-todo" element={<AddTodoPage />} />
-      <Route path="about" element={<AboutPage />} />
+      <Route path='add-todo' element={<AddTodoPage />} />
+      <Route path='about' element={<AboutPage />} />
     </Route>
   )
 );
