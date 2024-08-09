@@ -4,6 +4,7 @@ export interface ITodo {
   isCompleted: boolean;
   todo: string;
   createdAt: number | null;
+  completedAt?: number;
 }
 
 export interface ITodoContext {
