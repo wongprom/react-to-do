@@ -1,6 +1,6 @@
 /* jsx styling */
-.text-line-through {
-  text-decoration: line-through;
+.style-completed {
+  text-decoration: wavy line-through #440a1c;
 }
 
 /* icons */

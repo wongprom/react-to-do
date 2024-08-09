@@ -3,12 +3,26 @@ import { useTodoContext, useTodosLength } from '../customHooks';
 import { DAYS_OF_WEEK, MONTH_OF_YEAR } from '../data';
 import { ITodo } from '../interfaces';
 import { getRandomColorFromPallete } from '../utils';
+import { useEffect, useState } from 'react';
 
 interface ITodoProps {
   todo: ITodo;
   index: number;
 }
 export const Todo = ({ todo, index }: ITodoProps) => {
+  const [avatarConfig, setAvatarConfig] = useState(genConfig());
+  const [bgColorRektangle, setBgColorRektangle] = useState(
+    getRandomColorFromPallete()
+  );
+
+  useEffect(() => {
+    setAvatarConfig(genConfig());
+  }, []);
+
+  useEffect(() => {
+    setBgColorRektangle(getRandomColorFromPallete());
+  }, []);
+
   {
     /* <p>Display time it took to complete...?</p> */
   }
@@ -23,8 +37,6 @@ export const Todo = ({ todo, index }: ITodoProps) => {
     moveTodoDown,
   } = useTodoContext();
   const todosLength = useTodosLength();
-  // Avatar
-  const config = genConfig();
 
   const convertCreatedAtToNumber = Number(todo.createdAt);
   const workingDate = new Date(convertCreatedAtToNumber);
@@ -33,7 +45,7 @@ export const Todo = ({ todo, index }: ITodoProps) => {
   const day = DAYS_OF_WEEK[workingDate.getDay()];
 
   const inlineStyle = {
-    backgroundColor: getRandomColorFromPallete(),
+    backgroundColor: bgColorRektangle,
   };
 
   const displayFullTime = `${workingDate.getHours()}:${workingDate.getMinutes()}:${workingDate.getSeconds()}`;
@@ -43,16 +55,15 @@ export const Todo = ({ todo, index }: ITodoProps) => {
       <div className={`rektangle`} style={inlineStyle}></div>
       <div className='content-wrapper'>
         <div className='avatar-wrapper'>
-          {/* // ! ? How to prevent Avatar to change when state changes => todos,randomColor, onClick={() => handleFindTodoToEditById(todo.id)  */}
-          <Avatar style={{ width: '8rem', height: '8rem' }} {...config} />
+          <Avatar style={{ width: '8rem', height: '8rem' }} {...avatarConfig} />
         </div>
         <p>
           <span>
             <strong>{todo.author} </strong>
           </span>
-          `s todo is{' '}
+          `s todo is {todo.isCompleted && 'Completed 🥳'}
         </p>
-        <p className={`${todo.isCompleted && 'text-line-through'}`}>
+        <p className={`${todo.isCompleted && 'style-completed'}`}>
           <strong>{todo.todo}</strong>
         </p>
         <p className='created'>
